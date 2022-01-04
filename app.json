@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "apex-app",
+    "slug": "apex-app",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "apex-app"
+}
