@@ -14,10 +14,11 @@ export const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <ImageBackground
-        source={{
-          uri: "https://www.wptunnel.com/wp-content/uploads/2021/09/wptunnel-apex-legends-wallpaper-12.jpg",
-          // uri: "https://p4.wallpaperbetter.com/wallpaper/608/949/179/simple-background-white-texture-white-background-wallpaper-preview.jpg",
-        }}
+        source={require("../assets/img/octane.png")}
+        // source={{
+        //   // uri: "https://www.wptunnel.com/wp-content/uploads/2021/09/wptunnel-apex-legends-wallpaper-12.jpg",
+        //   // uri: "https://p4.wallpaperbetter.com/wallpaper/608/949/179/simple-background-white-texture-white-background-wallpaper-preview.jpg",
+        // }}
         style={styles.image}
         blurRadius={8}
       >
@@ -48,6 +49,7 @@ export const HomeScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#181818",
   },
   image: {
     flex: 1,

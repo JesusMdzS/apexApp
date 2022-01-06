@@ -9,8 +9,11 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
+import { Carousel, CarouselP } from "../components/CarouselP";
+import { useNavigation } from "@react-navigation/core";
 
 export const LegendScreen = () => {
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
@@ -23,7 +26,7 @@ export const LegendScreen = () => {
         />
 
         <View style={styles.carousel}>
-          <Image
+          {/* <Image
             source={require("../assets/img/octane.png")}
             // source={{
             //   uri: "https://image.pngaaa.com/491/4529491-middle.png",
@@ -36,14 +39,22 @@ export const LegendScreen = () => {
             style={styles.welcomeTextInfo}
           >
             Apex legends,now in your pocket
-          </Text>
-          <Image
-            style={styles.imageAsh}
-            source={{
-              uri: "https://media.contentapi.ea.com/content/dam/apex-legends/common/escape/apex-section-bg-escape-season-keyart-xl.jpg.adapt.1920w.jpg",
-            }}
-          />
+          </Text> */}
+          {/* here ends the first image and words */}
 
+          <Text
+            style={{
+              fontSize: 33,
+              color: "white",
+              padding: 10,
+              textAlign: "left",
+              fontWeight: "bold",
+            }}
+          >
+            What's new? Legend
+          </Text>
+          {/* CAROUSEL */}
+          <CarouselP></CarouselP>
           <Text
             style={{
               fontSize: 35,
@@ -55,9 +66,48 @@ export const LegendScreen = () => {
           >
             What to do?
           </Text>
+          {/* MENU */}
+
           <View style={styles.cardContainer}>
             <View style={styles.container}>
-              <TouchableOpacity style={styles.card}>
+              <TouchableOpacity
+                style={styles.box}
+                onPress={() => navigation.navigate("TrackerScreen")}
+              >
+                <ImageBackground
+                  source={require("../assets/img/segundointento.png")}
+                  resizeMode="cover"
+                  imageStyle={{ borderRadius: 20 }}
+                  style={styles.imageStat}
+                >
+                  <View style={styles.bottom}>
+                    <Text style={styles.text}>Game tracker</Text>
+                  </View>
+                </ImageBackground>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => navigation.navigate("NewsScreen")}
+                style={styles.box}
+              >
+                <ImageBackground
+                  source={{
+                    uri: "https://media.contentapi.ea.com/content/dam/apex-legends/common/articles/dark-depths/dark-depths-featured.jpg.adapt.crop16x9.431p.jpg",
+                  }}
+                  resizeMode="cover"
+                  imageStyle={{ borderRadius: 20 }}
+                  style={styles.imageStat}
+                >
+                  <View style={styles.bottom}>
+                    <Text style={styles.text}>News</Text>
+                  </View>
+                </ImageBackground>
+              </TouchableOpacity>
+              <TouchableOpacity
+                activeOpacity={0.6}
+                underlayColor="#DDDDDD"
+                onPress={() => navigation.navigate("MeetLegends")}
+                style={styles.card}
+              >
                 <ImageBackground
                   source={{
                     uri: "https://www.muycomputer.com/wp-content/uploads/2019/02/ApexLegends.jpg",
@@ -73,7 +123,12 @@ export const LegendScreen = () => {
               </TouchableOpacity>
             </View>
 
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity
+              style={styles.card}
+              activeOpacity={0.6}
+              underlayColor="#DDDDDD"
+              onPress={() => navigation.navigate("MapsScreen")}
+            >
               <ImageBackground
                 source={{
                   uri: "https://media.contentapi.ea.com/content/dam/apex-legends/common/legacy/maps/apex-media-maps-worlds-edge-xl-l-m.jpg.adapt.320w.jpg",
@@ -130,7 +185,7 @@ const styles = StyleSheet.create({
     marginTop: 5,
     padding: 10,
     backgroundColor: "transparent",
-    width: "95%",
+    width: "100%",
     alignSelf: "center",
   },
   card: {
@@ -159,9 +214,25 @@ const styles = StyleSheet.create({
     height: 300,
     resizeMode: "cover",
   },
+  imageStat: {
+    width: "100%",
+    height: 150,
+  },
   bottom: {
     flex: 1,
     justifyContent: "flex-end",
     marginBottom: 10,
+  },
+  bodyCards: {
+    height: 270,
+    backgroundColor: "#261361",
+    padding: 5,
+  },
+  box: {
+    backgroundColor: "black",
+    width: "100%",
+    borderRadius: 20,
+    height: 150,
+    marginTop: 10,
   },
 });
