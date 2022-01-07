@@ -9,15 +9,17 @@ import {
   TouchableHighlight,
 } from "react-native";
 import Carousel, { Pagination } from "react-native-snap-carousel";
+import { useNavigation } from "@react-navigation/core";
 
 export const CarouselP = () => {
+  const navigation = useNavigation();
   const Imagess = ({ item }) => {
     return (
       <View style={styles.carouselItemContainer}>
         <TouchableOpacity
           activeOpacity={10}
           underlayColor="transparent"
-          onPress={() => alert("Pressed!")}
+          onPress={() => navigation.navigate("NewsScreen")}
         >
           <ImageBackground
             borderRadius={20}

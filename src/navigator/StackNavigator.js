@@ -30,7 +30,6 @@ export const StackNavigator = () => {
         options={{
           gestureEnabled: true,
           title: "Legends",
-          headerShown: true,
         }}
       />
       <Stack.Screen
@@ -39,7 +38,6 @@ export const StackNavigator = () => {
         options={{
           gestureEnabled: true,
           title: "News",
-          headerShown: true,
         }}
       />
       <Stack.Screen
@@ -48,7 +46,6 @@ export const StackNavigator = () => {
         options={{
           gestureEnabled: true,
           title: "Maps",
-          headerShown: true,
         }}
       />
       <Stack.Screen
@@ -57,7 +54,6 @@ export const StackNavigator = () => {
         options={{
           gestureEnabled: true,
           title: "Tracker",
-          headerShown: true,
         }}
       />
     </Stack.Navigator>
